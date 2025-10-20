@@ -101,7 +101,8 @@ main>article>p:nth-of-type(2) {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main>article>a {
+main>article>a,
+main>section>form>ul>li>input[type="submit"] {
     color: #000;
     background-color: #e4e4e4;
     text-decoration: none;
@@ -118,12 +119,58 @@ main>section>h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-aside {
-    background-color: #fff;
-    border: 1px solid #cacaca;
-    margin: 0 5%;
+/* Contact */
+main>section>table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+main>section>table th,
+main>section>table td {
+    border: 1px solid black;
+}
+
+/* Login */
+main>section>form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main>section>form>ul li {
     margin-bottom: 20px;
+    overflow: hidden;
+}
+
+main>section>form>ul>li>label {
+    cursor: pointer;
+    width: 48%;
+    text-align: left;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+}
+
+main>section>form>ul>li>input:not([type="submit"]) {
+    box-sizing: border-box;
+    width: 48%;
+    float: right;
+}
+
+main>section>form>ul>li>input[type="submit"] {
+    border-width: 0;
+    cursor: pointer;
+    float: right;
+    padding: 5px 10px;
+}
+
+aside {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #cacaca;
+    background-color: #fff;
+    margin: 0 5% 20px;
 }
 
 aside>section {
@@ -148,4 +195,32 @@ aside>section>ul>li>a:hover {
 
 aside>section>ul>li>img {
     width: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    nav ul li {
+        width: 19%;
+    }
+
+    nav ul li:not(:last-child) {
+        margin-right: 8%;
+    }
+
+    main,
+    aside {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    body>main {
+        width: 50%;
+        margin: 0 0 0 10%;
+    }
+
+    aside {
+        width: 25%;
+        margin-top: 67px;
+        box-sizing: border-box;
+    }
+
 }
