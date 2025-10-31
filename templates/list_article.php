@@ -1,25 +1,14 @@
-        <header>
-            <h2>Latest articles</h2>
-        </header>
+<header>
+    <h2><?php echo $params["page_title"] ?></h2>
+</header>
 
-        <article>
-            <img src="./assets/img/html5-js-css3.png" alt="" />
-            <h3>Introduction to Client-Side Web Technologies</h3>
-            <p>3 October 2025 - Gino Pino</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid perferendis saepe natus ratione cum,
-                officiis laborum accusantium ut eos voluptatibus doloribus, voluptas fugit cumque et dolores
-                repudiandae. Eaque, quo totam!</p>
+<?php foreach ($params["articles"] as $article): ?>
+    <article>
+        <img src="<?php echo UPLOAD_DIR . $article["image"]; ?>" alt="" />
+        <h3><?php echo $article["title"] ?></h3>
+        <p><?php echo $article["published_date"]; ?> - <?php echo $article["author_name"] ?></p>
+        <p><?php echo $article["excerpt"] ?></p>
 
-            <a href="#">Read all</a>
-        </article>
-
-        <article>
-            <img src="./assets/img/php.png" alt="" />
-            <h3>Introduction to Client-Side Web Technologies</h3>
-            <p>3 October 2025 - Cippa Lippa</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid perferendis saepe natus ratione cum,
-                officiis laborum accusantium ut eos voluptatibus doloribus, voluptas fugit cumque et dolores
-                repudiandae. Eaque, quo totam!</p>
-
-            <a href="#">Read all</a>
-        </article>
+        <a href="./article.php?id=<?php echo urlencode($article["article_id"]); ?>">Read all</a>
+    </article>
+<?php endforeach; ?>

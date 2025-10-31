@@ -2,13 +2,13 @@
 require_once("../bootstrap.php");
 
 // BASE params
-$params["title"] = "Home / Web Technologies Blog";
+$params["title"] = "Archive / Web Technologies Blog";
 $params["main"] = "list_article.php";
 $params["randomArticle"] = $dbh->getRandomPosts();
 $params["categories"] = $dbh->getCategories();
 
-// SPECIFIC params
-$params["page_title"] = "Latest Articles";
-$params["articles"] = $dbh->getPosts(2);
+# SPECIFIC params
+$params["page_title"] = "Article Archive";
+$params["articles"] = $dbh->getPosts();
 
 require("../templates/base.php");

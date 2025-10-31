@@ -17,10 +17,10 @@
 
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./archive.html">Archive</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./login.html">Login</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="./archive.php">Archive</a></li>
+            <li><a href="./contact.php">Contact</a></li>
+            <li><a href="./login.php">Login</a></li>
         </ul>
     </nav>
 
@@ -38,7 +38,7 @@
                 <?php foreach ($params["randomArticle"] as $randomArticle): ?>
                     <li>
                         <img src="<?php echo UPLOAD_DIR . $randomArticle["image"]; ?>" alt="" />
-                        <a href="#"><?php echo $randomArticle["title"]; ?></a>
+                        <a href="./article.php?id=<?php echo urlencode($randomArticle["article_id"]); ?>"><?php echo $randomArticle["title"]; ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -49,7 +49,7 @@
             </header>
             <ul>
                 <?php foreach ($params["categories"] as $category): ?>
-                    <li><a href="#"><?php echo $category["name"]; ?></a></li>
+                    <li><a href="./category.php?id=<?php echo urlencode($category["category_id"]); ?>"><?php echo $category["name"]; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </section>
